@@ -37,11 +37,7 @@ An app containing the vaccination schedule, reminders, and awareness information
 
 ## Run locally
 Open `index.html` or `kalora.html` in any browser. No installation or internet connection is needed.
-
-## Deploy (open it as a website)
-1. **Netlify Drop:** go to `app.netlify.com/drop` and drag the folder containing these files onto the page.
-2. **GitHub Pages:** upload the files to a repository, then Settings → Pages → select the `main` branch.
-
+ 
 ## Important notes
 - **Medical content:** the schedule is general and indicative. It is not an exact copy of the Jordanian Ministry of Health schedule and must be checked against the official one before use. Edit vaccines and ages in the `SCHED` and `VAX` arrays inside `kalora.html`.
 - **This app does not replace the official vaccination card or a doctor's advice.**
