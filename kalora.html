@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c65d91">
+<meta name="description" content="KALORA - رعاية الطفل تبدأ بالوعي">
+<link rel="manifest" href="manifest.webmanifest">
+<title>KALORA | صحة طفلك</title>
+<style>
+:root{--pink:#c65d91;--pink2:#f8e5ef;--ink:#382b35;--muted:#827580;--bg:#fff9fc;--line:#f0dce7;--green:#4c9b83;--shadow:0 8px 28px #7b3e5c12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}
+.app{max-width:520px;margin:auto;min-height:100vh;background:#fff;box-shadow:0 0 40px #4b26300d;padding-bottom:86px}
+header{padding:22px 18px 18px;background:linear-gradient(135deg,#f9e7f0,#fff8fb);border-radius:0 0 26px 26px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand{display:flex;align-items:center;gap:10px}.logo{width:45px;height:45px;border-radius:15px;background:#fff;display:grid;place-items:center;color:var(--pink);font-size:24px;box-shadow:var(--shadow)}
+h1{font-size:22px;margin:0;color:#9c416f;letter-spacing:.4px}.sub{font-size:12px;color:var(--muted);margin-top:3px}
+select.lang{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px;color:var(--ink);max-width:125px}
+.welcome{margin-top:20px}.welcome h2{font-size:20px;margin:0 0 6px}.welcome p{margin:0;color:#755e6d;font-size:13px;line-height:1.7}
+main{padding:18px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:8px 0 12px}.section-head h3{font-size:16px;margin:0}.muted{color:var(--muted);font-size:12px}
+.hero{background:#fff4f9;border:1px solid var(--line);border-radius:18px;padding:15px;margin-bottom:18px;display:flex;gap:12px;align-items:center}.hero-icon{font-size:30px}.hero strong{display:block;margin-bottom:4px}.hero span{font-size:12px;color:var(--muted);line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.tile{border:1px solid var(--line);background:#fff;border-radius:17px;padding:14px;text-align:right;min-height:116px;box-shadow:var(--shadow);color:var(--ink)}.tile .emoji{font-size:25px;display:block;margin-bottom:9px}.tile b{font-size:13px;display:block;margin-bottom:4px}.tile small{font-size:11px;color:var(--muted);line-height:1.5}
+.card{border:1px solid var(--line);border-radius:17px;padding:14px;margin:10px 0;background:#fff}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.pill{font-size:11px;padding:5px 9px;border-radius:30px;background:#f8e5ef;color:#9c416f}
+.btn{background:var(--pink);color:white;padding:10px 14px;border-radius:12px;font-weight:600;font-size:13px}.btn.light{background:#fff0f7;color:#a54878;border:1px solid var(--line)}.btn.danger{background:#fff0f0;color:#b33b50}.btn.small{padding:7px 10px;font-size:12px}
+input,textarea,select.field{width:100%;padding:11px;border:1px solid var(--line);border-radius:12px;background:#fff;margin:5px 0 11px;color:var(--ink)}
+textarea{min-height:90px;resize:vertical}label{font-size:12px;font-weight:650;color:#685563}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 5px max(8px,env(safe-area-inset-bottom));z-index:4}
+.nav{background:none;color:#8d7d87;font-size:10px;padding:5px 2px}.nav span{display:block;font-size:19px;margin-bottom:3px}.nav.active{color:var(--pink);font-weight:700}
+.view{display:none}.view.active{display:block}.empty{text-align:center;padding:24px;color:var(--muted);font-size:13px}
+.article-title{font-size:15px;font-weight:700}.article-body{white-space:pre-wrap;font-size:13px;line-height:1.8;color:#665761;margin-top:8px}
+.notice{background:#fff7e8;border:1px solid #f4dfb3;color:#76531d;border-radius:13px;padding:12px;font-size:12px;line-height:1.7;margin:12px 0}
+.admin-head{background:#f7efff;border:1px solid #e9dcf5;border-radius:16px;padding:13px;margin-bottom:12px}
+.banner{border-radius:16px;padding:13px;margin:0 0 12px;font-size:13px;line-height:1.7;background:#eaf6f1;border:1px solid #cfe7dd;color:#2f6b57}.banner.soon{background:#fff7e8;border-color:#f4dfb3;color:#76531d}.banner.late{background:#fff0f0;border-color:#f3cfd4;color:#a3304a}.banner .row{margin-top:8px;justify-content:flex-start;flex-wrap:wrap}
+.bar{height:9px;background:#f4e6ee;border-radius:9px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:var(--green)}
+.pill.ok{background:#e3f4ec;color:#2f6b57}.pill.late{background:#fde6ea;color:#a3304a}.pill.soon{background:#fff0d2;color:#76531d}
+.vrow{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.vrow input{width:20px;height:20px;margin:2px 0 0;flex:none}
+.vrow details{flex:1;font-size:13px}.vrow summary{cursor:pointer;font-weight:600}.vinfo{color:#665761;font-size:12px;line-height:1.8;margin-top:6px}.vinfo b{color:#9c416f}
+.why li{margin:6px 0;font-size:13px;line-height:1.7}
+footer{text-align:center;color:#aa9ca6;font-size:10px;padding:15px}
+@media(min-width:520px){.bottom{bottom:12px;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="top">
+  <div class="brand"><div class="logo">♡</div><div><h1>KALORA</h1><div class="sub">Children's Health & Care</div></div></div>
+  <select class="lang" id="language" aria-label="Language">
+   <option value="ar">العربية</option><option value="en">English</option><option value="fr">Français</option><option value="es">Español</option><option value="de">Deutsch</option><option value="tr">Türkçe</option><option value="it">Italiano</option><option value="ur">اردو</option>
+  </select>
+ </div>
+ <div class="welcome"><h2 id="welcomeTitle">أهلاً بك في KALORA 🌸</h2><p id="welcomeText">مساحة موثوقة لمتابعة صحة طفلك والتعرّف إلى الرعاية والوقاية.</p></div>
+</header>
+<main>
+ <section id="home" class="view active">
+  <div class="hero"><div class="hero-icon">🩺</div><div><strong id="heroTitle">رعاية صغيرة تصنع فرقاً كبيراً</strong><span id="heroText">تابعي التطعيمات، وتعرّفي إلى علامات الخطر، واكتسبي المعرفة لرعاية طفلك بأمان.</span></div></div>
+  <div class="section-head"><h3 id="topicsTitle">استكشفي الموضوعات</h3><span class="muted" id="topicsSub">صحة الطفل</span></div>
+  <div class="grid" id="topicGrid"></div>
+  <div class="section-head" style="margin-top:22px"><h3 id="quickTitle">متابعة سريعة</h3></div>
+  <div class="card"><div class="row"><div><b id="vaxQuick">جدول التطعيمات</b><div class="muted" id="vaxQuickSub">أضيفي بيانات طفلك ومواعيده</div></div><button class="btn light small" onclick="showView('vaccines')" id="openVax">فتح</button></div></div>
+ </section>
+ <section id="vaccines" class="view">
+  <div class="section-head"><h3 id="vaccinesTitle">متابعة التطعيمات</h3><span class="pill">Vaccine tracker</span></div>
+  <div class="notice" id="vaxNotice">الجدول التالي عام وإرشادي، ويُحسب تلقائياً من تاريخ الميلاد. قارنيه دائماً مع بطاقة التطعيم الرسمية من المركز الصحي، فهي المرجع الأساسي، ولا يُغني عن نصيحة الطبيب.</div>
+  <div class="card">
+   <label id="childNameLabel">اسم الطفل</label><input id="childName" placeholder="اسم الطفل">
+   <label id="childDobLabel">تاريخ الميلاد</label><input id="childDob" type="date">
+   <button class="btn" onclick="saveChild()" id="saveChild">حفظ بيانات الطفل</button>
+  </div>
+  <div id="remindBanner"></div>
+  <div class="section-head"><h3>جدول التطعيمات</h3><span class="muted" id="progTxt"></span></div>
+  <div id="scheduleBox"></div>
+  <div class="card why"><b>لماذا الالتزام بالجدول مهم؟</b><ul style="padding-inline-start:18px;margin:8px 0 0">
+   <li><b>حماية مبكرة:</b> أخطر الأمراض تصيب الرضّع في أعمارهم الأولى، والمواعيد مصممة لتصل المناعة قبل ذلك.</li>
+   <li><b>جرعات متكاملة:</b> كثير من المطاعيم تحتاج عدة جرعات ليكتمل أثرها، وتفويت جرعة قد يُضعف الحماية.</li>
+   <li><b>حماية المجتمع:</b> عندما يلتزم معظم الأطفال تقل فرصة انتشار الأمراض، فيُحمى من لا يستطيع التطعيم.</li>
+   <li><b>أمان وفعالية:</b> المطاعيم الروتينية معتمدة من منظمة الصحة العالمية، وأعراضها الجانبية الشائعة بسيطة ومؤقتة.</li>
+   <li><b>تأخرتِ عن موعد؟</b> لا داعي للقلق؛ راجعي المركز الصحي في أقرب وقت لإكمال الجرعات دون البدء من جديد.</li></ul></div>
+  <div class="section-head"><h3 id="dosesTitle">جرعات ومواعيد الطفل</h3><button class="btn small" onclick="openDoseForm()" id="addDose">+ إضافة موعد</button></div>
+  <div id="doseForm" class="card" style="display:none">
+   <label id="vaccineNameLabel">اسم المطعوم</label><input id="doseName" placeholder="اسم المطعوم">
+   <label id="doseDateLabel">تاريخ الموعد</label><input id="doseDate" type="date">
+   <label id="doseNotesLabel">ملاحظات</label><input id="doseNotes" placeholder="الجرعة أو المركز الصحي">
+   <div class="row"><button class="btn" onclick="addDose()" id="saveDose">حفظ الموعد</button><button class="btn light" onclick="closeDoseForm()" id="cancelDose">إلغاء</button></div>
+  </div>
+  <div id="doseList"></div>
+ </section>
+ <section id="library" class="view">
+  <div class="section-head"><h3 id="libraryTitle">المكتبة التثقيفية</h3><span class="pill">Health library</span></div>
+  <div id="articleList"></div>
+ </section>
+ <section id="admin" class="view">
+  <div class="admin-head"><b id="adminTitle">لوحة تحكم المطوّرة</b><div class="muted" id="adminSub">إدارة المحتوى والأقسام محلياً على هذا الجهاز في هذه النسخة التجريبية.</div></div>
+  <div class="card">
+   <div class="section-head"><h3 id="addContentTitle">إضافة محتوى تثقيفي</h3></div>
+   <label id="contentTitleLabel">عنوان المحتوى</label><input id="newTitle" placeholder="مثلاً: علامات الجفاف">
+   <label id="contentCategoryLabel">القسم</label><select id="newCategory" class="field"></select>
+   <label id="contentBodyLabel">المحتوى</label><textarea id="newBody" placeholder="اكتبي المعلومات التثقيفية هنا..."></textarea>
+   <label id="contentLangLabel">لغة المحتوى</label><select id="newLang" class="field"><option value="ar">العربية</option><option value="en">English</option></select>
+   <button class="btn" onclick="addArticle()" id="publishContent">إضافة المحتوى</button>
+  </div>
+  <div class="card">
+   <div class="section-head"><h3 id="manageTopicsTitle">إدارة الأقسام</h3></div>
+   <label id="newTopicLabel">اسم القسم الجديد</label><input id="newTopic" placeholder="اسم القسم">
+   <button class="btn light" onclick="addTopic()" id="addTopic">+ إنشاء قسم</button>
+   <div id="adminTopics" style="margin-top:12px"></div>
+  </div>
+  <div class="card">
+   <div class="row"><b id="backupTitle">نسخة احتياطية</b><button class="btn light small" onclick="exportData()" id="exportBtn">تصدير البيانات</button></div>
+   <div class="muted" id="backupSub">احتفظي بنسخة من المحتوى الذي أضفته.</div>
+   <label id="importLabel" style="display:block;margin-top:12px">استيراد نسخة JSON</label><input type="file" id="importFile" accept=".json,application/json">
+  </div>
+  <div class="notice" id="adminNotice">تنبيه: هذه لوحة أولية غير محمية بحساب إداري، والبيانات محفوظة على هذا المتصفح فقط. قبل النشر العام سنربطها بخادم وقاعدة بيانات ونضيف تسجيل دخول وصلاحيات آمنة.</div>
+ </section>
+</main>
+<footer>© KALORA · Created with care</footer>
+<nav class="bottom">
+ <button class="nav active" data-view="home" onclick="showView('home')"><span>⌂</span><i id="navHome">الرئيسية</i></button>
+ <button class="nav" data-view="vaccines" onclick="showView('vaccines')"><span>💉</span><i id="navVax">التطعيمات</i></button>
+ <button class="nav" data-view="library" onclick="showView('library')"><span>📚</span><i id="navLibrary">المكتبة</i></button>
+ <button class="nav" data-view="admin" onclick="showView('admin')"><span>⚙</span><i id="navAdmin">لوحة التحكم</i></button>
+</nav>
+</div>
+<script>
+const defaultTopics=[
+{id:"vaccines",icon:"💉",title:"تطعيمات الأطفال",desc:"مواعيد الجرعات وأهميتها"},
+{id:"newborn",icon:"👶",title:"علامات الخطر لحديثي الولادة",desc:"متى يجب طلب المساعدة؟"},
+{id:"dehydration",icon:"💧",title:"الجفاف عند الأطفال",desc:"العلامات والوقاية"},
+{id:"safety",icon:"🏡",title:"سلامة الأطفال",desc:"الوقاية من الحوادث المنزلية"},
+{id:"asthma",icon:"🫁",title:"الربو عند الأطفال",desc:"الأعراض والتعامل مع النوبة"},
+{id:"diabetes",icon:"🩸",title:"السكري النوع الأول",desc:"التثقيف والرعاية اليومية"}
+];
+const translations={
+ar:{welcome:"أهلاً بك في KALORA 🌸",welcomeText:"مساحة موثوقة لمتابعة صحة طفلك والتعرّف إلى الرعاية والوقاية.",topics:"استكشفي الموضوعات",quick:"متابعة سريعة",vaccines:"تطعيمات الأطفال",newborn:"علامات الخطر عند حديثي الولادة",dehydration:"الجفاف عند الأطفال",safety:"سلامة الأطفال والوقاية من الحوادث",asthma:"الربو عند الأطفال",diabetes:"السكري من النوع الأول",home:"الرئيسية",vax:"التطعيمات",library:"المكتبة",admin:"لوحة التحكم"},
+en:{welcome:"Welcome to KALORA 🌸",welcomeText:"A supportive space to follow your child's health and learn about care and prevention.",topics:"Explore topics",quick:"Quick access",vaccines:"Child Vaccinations",newborn:"Newborn Warning Signs",dehydration:"Dehydration in Children",safety:"Child Safety",asthma:"Asthma in Children",diabetes:"Type 1 Diabetes",home:"Home",vax:"Vaccines",library:"Library",admin:"Admin"},
+fr:{welcome:"Bienvenue sur KALORA 🌸",welcomeText:"Un espace pour suivre la santé de votre enfant et découvrir les soins et la prévention.",topics:"Explorer les thèmes",quick:"Accès rapide",vaccines:"Vaccination des enfants",newborn:"Signes d’alerte du nouveau-né",dehydration:"Déshydratation chez l’enfant",safety:"Sécurité des enfants",asthma:"Asthme chez l’enfant",diabetes:"Diabète de type 1",home:"Accueil",vax:"Vaccins",library:"Bibliothèque",admin:"Gestion"},
+es:{welcome:"Bienvenidos a KALORA 🌸",welcomeText:"Un espacio para seguir la salud infantil y aprender sobre cuidados y prevención.",topics:"Explorar temas",quick:"Acceso rápido",vaccines:"Vacunación infantil",newborn:"Señales de alarma neonatal",dehydration:"Deshidratación infantil",safety:"Seguridad infantil",asthma:"Asma infantil",diabetes:"Diabetes tipo 1",home:"Inicio",vax:"Vacunas",library:"Biblioteca",admin:"Administración"},
+de:{welcome:"Willkommen bei KALORA 🌸",welcomeText:"Ein Ort zur Begleitung der Kindergesundheit und für Informationen zu Pflege und Prävention.",topics:"Themen entdecken",quick:"Schnellzugriff",vaccines:"Kinderimpfungen",newborn:"Warnzeichen bei Neugeborenen",dehydration:"Dehydrierung bei Kindern",safety:"Kindersicherheit",asthma:"Asthma bei Kindern",diabetes:"Typ-1-Diabetes",home:"Start",vax:"Impfungen",library:"Bibliothek",admin:"Verwaltung"},
+tr:{welcome:"KALORA'ya hoş geldiniz 🌸",welcomeText:"Çocuğunuzun sağlığını takip etmek ve bakım ile korunmayı öğrenmek için bir alan.",topics:"Konuları keşfet",quick:"Hızlı erişim",vaccines:"Çocuk aşıları",newborn:"Yenidoğan uyarı işaretleri",dehydration:"Çocuklarda susuz kalma",safety:"Çocuk güvenliği",asthma:"Çocuklarda astım",diabetes:"Tip 1 diyabet",home:"Ana sayfa",vax:"Aşılar",library:"Kütüphane",admin:"Yönetim"},
+it:{welcome:"Benvenuti in KALORA 🌸",welcomeText:"Uno spazio per seguire la salute dei bambini e conoscere cura e prevenzione.",topics:"Esplora gli argomenti",quick:"Accesso rapido",vaccines:"Vaccinazioni infantili",newborn:"Segnali di allarme neonatali",dehydration:"Disidratazione nei bambini",safety:"Sicurezza dei bambini",asthma:"Asma nei bambini",diabetes:"Diabete di tipo 1",home:"Home",vax:"Vaccini",library:"Biblioteca",admin:"Gestione"},
+ur:{welcome:"KALORA میں خوش آمدید 🌸",welcomeText:"بچوں کی صحت، دیکھ بھال اور حفاظت کے بارے میں معلومات کا مرکز۔",topics:"موضوعات دیکھیں",quick:"فوری رسائی",vaccines:"بچوں کی ویکسین",newborn:"نوزائیدہ میں خطرے کی علامات",dehydration:"بچوں میں پانی کی کمی",safety:"بچوں کی حفاظت",asthma:"بچوں میں دمہ",diabetes:"ٹائپ 1 ذیابیطس",home:"ہوم",vax:"ویکسین",library:"لائبریری",admin:"انتظام"}
+};
+let topics=JSON.parse(localStorage.getItem("kalora_topics")||"null")||defaultTopics;
+let articles=JSON.parse(localStorage.getItem("kalora_articles")||"null")||[];
+let doses=JSON.parse(localStorage.getItem("kalora_doses")||"null")||[];
+let child=JSON.parse(localStorage.getItem("kalora_child")||"null")||{name:"",dob:""};
+let currentLang="ar";let vaxDone=JSON.parse(localStorage.getItem("kalora_done")||"{}");
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem("kalora_topics",JSON.stringify(topics));localStorage.setItem("kalora_articles",JSON.stringify(articles));localStorage.setItem("kalora_doses",JSON.stringify(doses));localStorage.setItem("kalora_child",JSON.stringify(child));localStorage.setItem("kalora_done",JSON.stringify(vaxDone))}
+function showView(v){document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));$(v).classList.add("active");document.querySelectorAll(".nav").forEach(x=>x.classList.toggle("active",x.dataset.view===v));if(v==="vaccines")renderDoses();if(v==="library")renderArticles();if(v==="admin")renderAdmin()}
+function setLanguage(lang){currentLang=lang;document.documentElement.lang=lang;document.documentElement.dir=(lang==="ar"||lang==="ur")?"rtl":"ltr";let t=translations[lang]||translations.en; $("welcomeTitle").textContent=t.welcome;$("welcomeText").textContent=t.welcomeText;$("topicsTitle").textContent=t.topics;$("quickTitle").textContent=t.quick;$("navHome").textContent=t.home;$("navVax").textContent=t.vax;$("navLibrary").textContent=t.library;$("navAdmin").textContent=t.admin;renderTopics()}
+function renderTopics(){let t=translations[currentLang]||translations.en;$("topicGrid").innerHTML=topics.map(x=>`<button class="tile" onclick="openTopic('${x.id}')"><span class="emoji">${x.icon||"✚"}</span><b>${esc(t[x.id]||x.title)}</b><small>${esc(x.desc||"")}</small></button>`).join("");$("newCategory").innerHTML=topics.map(x=>`<option value="${x.id}">${esc(x.title)}</option>`).join("")}
+function openTopic(id){if(id==="vaccines"){showView("vaccines");return}showView("library");let found=articles.filter(a=>a.category===id);$("articleList").innerHTML=found.length?found.map(articleCard).join(""):`<div class="empty">لا يوجد محتوى منشور في هذا القسم حالياً. يمكنك إضافته من لوحة التحكم.</div>`}
+function saveChild(){child={name:$("childName").value.trim(),dob:$("childDob").value};save();renderSchedule();alert("تم حفظ بيانات الطفل على هذا الجهاز.");}
+function openDoseForm(){$("doseForm").style.display="block"}
+function closeDoseForm(){$("doseForm").style.display="none"}
+function addDose(){let name=$("doseName").value.trim(),date=$("doseDate").value;if(!name||!date){alert("يرجى إدخال اسم المطعوم والتاريخ.");return}doses.push({id:Date.now(),name,date,notes:$("doseNotes").value,done:false});save();$("doseName").value="";$("doseDate").value="";$("doseNotes").value="";closeDoseForm();renderDoses()}
+function renderDoses(){renderSchedule();$("childName").value=child.name||"";$("childDob").value=child.dob||"";doses.sort((a,b)=>a.date.localeCompare(b.date));$("doseList").innerHTML=doses.length?doses.map(d=>`<div class="card"><div class="row"><b>${esc(d.name)}</b><span class="pill">${d.done?"تم":"موعد"}</span></div><div class="muted" style="margin:7px 0">${esc(d.date)} ${d.notes?"· "+esc(d.notes):""}</div><div class="row"><button class="btn light small" onclick="toggleDose(${d.id})">${d.done?"إلغاء الإنجاز":"تحديد كمكتمل"}</button><button class="btn danger small" onclick="deleteDose(${d.id})">حذف</button></div></div>`).join(""):`<div class="empty">لم تتم إضافة مواعيد بعد. أضيفي المواعيد من بطاقة التطعيم الرسمية أو المركز الصحي.</div>`}
+function toggleDose(id){let d=doses.find(x=>x.id===id);if(d)d.done=!d.done;save();renderDoses()}
+function deleteDose(id){if(confirm("حذف هذا الموعد؟")){doses=doses.filter(x=>x.id!==id);save();renderDoses()}}
+function addArticle(){let title=$("newTitle").value.trim(),body=$("newBody").value.trim();if(!title||!body){alert("أدخلي العنوان والمحتوى.");return}articles.push({id:Date.now(),title,body,category:$("newCategory").value,lang:$("newLang").value,created:new Date().toISOString()});save();$("newTitle").value="";$("newBody").value="";renderAdmin();alert("تمت إضافة المحتوى.");}
+function articleCard(a){return `<div class="card"><div class="row"><div class="article-title">${esc(a.title)}</div><span class="pill">${esc(a.lang.toUpperCase())}</span></div><div class="article-body">${esc(a.body)}</div><div style="text-align:left;margin-top:10px"><button class="btn danger small" onclick="deleteArticle(${a.id})">حذف</button></div></div>`}
+function renderArticles(){$("articleList").innerHTML=articles.length?articles.map(articleCard).join(""):`<div class="empty">لا توجد مقالات بعد. يمكنك إضافة المحتوى من لوحة التحكم.</div>`}
+function deleteArticle(id){if(confirm("حذف المحتوى؟")){articles=articles.filter(a=>a.id!==id);save();renderArticles();renderAdmin()}}
+function addTopic(){let title=$("newTopic").value.trim();if(!title)return;let id="custom"+Date.now();topics.push({id,icon:"📌",title,desc:"قسم تثقيفي جديد"});$("newTopic").value="";save();renderTopics();renderAdmin()}
+function renderAdmin(){$("adminTopics").innerHTML=topics.map(x=>`<div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span style="font-size:13px">${x.icon||"📌"} ${esc(x.title)}</span>${x.id.startsWith("custom")?`<button class="btn danger small" onclick="deleteTopic('${x.id}')">حذف</button>`:"<span class='muted'>أساسي</span>"}</div>`).join("")}
+function deleteTopic(id){if(confirm("حذف القسم؟")){topics=topics.filter(x=>x.id!==id);save();renderTopics();renderAdmin()}}
+function exportData(){let data={topics,articles,doses,child,vaxDone,exportedAt:new Date().toISOString()};let blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="kalora-backup.json";a.click();URL.revokeObjectURL(a.href)}
+$("importFile").addEventListener("change",async e=>{let f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(!Array.isArray(d.topics)||!Array.isArray(d.articles)||!Array.isArray(d.doses))throw Error();topics=d.topics;articles=d.articles;doses=d.doses;child=d.child||{name:"",dob:""};vaxDone=d.vaxDone||{};save();renderTopics();renderAdmin();alert("تم استيراد النسخة الاحتياطية.")}catch(err){alert("ملف النسخة الاحتياطية غير صالح.")}});
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("language").addEventListener("change",e=>setLanguage(e.target.value));
+
+const VAX={
+bcg:{n:"BCG (السل)",p:"السل الشديد عند الرضّع، مثل التهاب السحايا السلّي.",w:"يُعطى مرة واحدة بعد الولادة لأن الرضيع أكثر عرضة لمضاعفات السل الخطيرة.",s:"قد تظهر حبة أو ندبة صغيرة مكان الحقنة وهذا طبيعي."},
+hepb:{n:"التهاب الكبد ب",p:"عدوى فيروسية قد تتحول إلى مزمنة وتضر الكبد.",w:"كلما أُخذت الجرعة الأولى مبكراً كانت الحماية أفضل، خاصة إن كانت الأم حاملة للفيروس.",s:"ألم أو احمرار خفيف مكان الحقنة."},
+penta:{n:"اللقاح المركّب (الخناق، السعال الديكي، الكزاز، الكبد ب، المستدمية)",p:"يحمي من عدة أمراض خطيرة بحقنة واحدة.",w:"يحتاج عدة جرعات متتالية؛ السعال الديكي مثلاً خطير جداً على الرضّع الصغار.",s:"حرارة خفيفة، انزعاج أو ورم بسيط مكان الحقنة ليوم أو يومين."},
+polio:{n:"شلل الأطفال",p:"مرض فيروسي قد يسبب شللاً دائماً.",w:"الأردن خالٍ من شلل الأطفال منذ عام 1992، والمحافظة على ذلك تتطلب استمرار الالتزام بالجرعات.",s:"أعراض جانبية نادرة وبسيطة."},
+rota:{n:"فيروس الروتا (قطرات فموية)",p:"إسهال وقيء شديدان قد يسببان الجفاف عند الرضّع.",w:"يقلل دخول المستشفى بسبب الجفاف. وله عمر أقصى لإعطاء الجرعات، فلا تؤجليه.",s:"قد يحدث انزعاج أو إسهال خفيف مؤقت."},
+pcv:{n:"المكورات الرئوية (إن كان ضمن جدول مركزك)",p:"التهاب الرئة والسحايا والأذن الوسطى.",w:"يوفّر حماية مهمة في السنتين الأوليين. اسألي مركزك الصحي عن توفره ومواعيده.",s:"ألم مكان الحقنة وحرارة خفيفة."},
+measles:{n:"الحصبة",p:"مرض شديد العدوى قد يسبب التهاباً رئوياً ودماغياً.",w:"ينتشر بسرعة بين غير المطعّمين، ولذلك الجرعة في عمر 9 أشهر مهمة.",s:"حرارة أو طفح خفيف بعد 5 إلى 12 يوماً أحياناً."},
+mmr:{n:"الحصبة والنكاف والحصبة الألمانية (MMR)",p:"ثلاثة أمراض فيروسية معدية بحقنة واحدة.",w:"الجرعتان معاً تعطيان حماية أعلى وأطول من جرعة واحدة.",s:"حرارة أو طفح خفيف، ونادراً تورم الغدد."},
+boost:{n:"الجرعات المنشّطة (الثلاثي البكتيري وشلل الأطفال)",p:"تجدد المناعة ضد الخناق والسعال الديكي والكزاز وشلل الأطفال.",w:"المناعة تضعف مع الوقت، فتعيدها الجرعة المنشّطة.",s:"ألم أو حرارة خفيفة ليوم أو يومين."},
+school:{n:"المنشّطة المدرسية (الخناق والكزاز وغيرها)",p:"تثبّت المناعة في سن المدرسة.",w:"تُعطى غالباً عبر برنامج الصحة المدرسية أو المركز الصحي.",s:"ألم مكان الحقنة."}
+};
+const SCHED=[
+{m:0,l:"عند الولادة",v:["bcg","hepb"]},
+{m:2,l:"عمر شهرين",v:["penta","polio","rota","pcv"]},
+{m:4,l:"عمر 4 أشهر",v:["penta","polio","rota","pcv"]},
+{m:6,l:"عمر 6 أشهر",v:["penta","polio","pcv"]},
+{m:9,l:"عمر 9 أشهر",v:["measles"]},
+{m:12,l:"عمر 12 شهراً",v:["mmr"]},
+{m:18,l:"عمر 18 شهراً",v:["mmr","boost"]},
+{m:72,l:"عند دخول المدرسة (6 سنوات)",v:["school"]}
+];
+const dobDate=()=>new Date(child.dob+"T00:00:00");
+const addM=(d,m)=>new Date(d.getFullYear(),d.getMonth()+m,d.getDate());
+const fmtD=d=>d.toLocaleDateString(currentLang==="ar"?"ar-JO":currentLang,{day:"numeric",month:"long",year:"numeric"});
+function toggleV(m,v){let k=m+"-"+v;if(vaxDone[k])delete vaxDone[k];else vaxDone[k]=1;save();renderSchedule()}
+function renderSchedule(){
+ const box=$("scheduleBox"),ban=$("remindBanner");if(!box)return;
+ if(!child.dob){box.innerHTML='<div class="empty">أدخلي تاريخ ميلاد الطفل واضغطي «حفظ» ليظهر الجدول بمواعيده.</div>';ban.innerHTML="";$("progTxt").textContent="";$("vaxQuickSub").textContent="أضيفي بيانات طفلك ومواعيده";return}
+ const dob=dobDate(),today=new Date();today.setHours(0,0,0,0);
+ let total=0,done=0,next=null;
+ const html=SCHED.map(g=>{
+  const due=addM(dob,g.m),days=Math.round((due-today)/864e5),ds=g.v.filter(v=>vaxDone[g.m+"-"+v]).length,all=ds===g.v.length;
+  total+=g.v.length;done+=ds;if(!all&&!next)next={g,due,days};
+  const st=all?["تم","ok"]:days<0?["متأخر","late"]:days<=30?["قريباً","soon"]:["قادم",""];
+  return `<div class="card"><div class="row"><div><b>${g.l}</b><div class="muted">${fmtD(due)}</div></div><span class="pill ${st[1]}">${st[0]}</span></div>${g.v.map(v=>`<div class="vrow"><input type="checkbox" ${vaxDone[g.m+"-"+v]?"checked":""} onchange="toggleV(${g.m},'${v}')" aria-label="${esc(VAX[v].n)}"><details><summary>${esc(VAX[v].n)}</summary><div class="vinfo"><b>يحمي من:</b> ${VAX[v].p}<br><b>لماذا؟</b> ${VAX[v].w}<br><b>أعراض متوقعة:</b> ${VAX[v].s}</div></details></div>`).join("")}<div style="margin-top:8px"><button class="btn light small" onclick="addToCalendar(${g.m})">📅 أضيفي للتقويم مع تذكير</button></div></div>`}).join("");
+ box.innerHTML=html;
+ const pct=Math.round(done/total*100);
+ $("progTxt").textContent=done+" من "+total+" ("+pct+"%)";
+ box.insertAdjacentHTML("afterbegin",`<div class="bar"><i style="width:${pct}%"></i></div>`);
+ const who=child.name||"طفلك";
+ if(!next){ban.innerHTML='<div class="banner">🎉 تم تسجيل جميع التطعيمات المدرجة لـ '+esc(who)+'. أحسنتِ!</div>';$("vaxQuickSub").textContent="جميع التطعيمات مسجلة 🎉";return}
+ const n=next,cls=n.days<0?"late":n.days<=30?"soon":"";
+ const msg=n.days<0?`تأخر موعد تطعيمات <b>${n.g.l}</b> لـ ${esc(who)} منذ ${-n.days} يوماً. يُنصح بمراجعة المركز الصحي قريباً.`:n.days===0?`موعد تطعيمات <b>${n.g.l}</b> لـ ${esc(who)} هو اليوم.`:`الموعد القادم: تطعيمات <b>${n.g.l}</b> لـ ${esc(who)} بعد ${n.days} يوماً (${fmtD(n.due)}).`;
+ ban.innerHTML=`<div class="banner ${cls}">🔔 ${msg}<div class="row"><button class="btn small" onclick="enableNotif()">تفعيل التنبيهات</button><button class="btn light small" onclick="addToCalendar(${n.g.m})">إضافة للتقويم</button></div><div style="font-size:11px;margin-top:8px;opacity:.85">التنبيه يظهر عند فتح التطبيق. للتذكير حتى لو كان التطبيق مغلقاً استخدمي التقويم.</div></div>`;
+ $("vaxQuickSub").textContent=(n.days<0?"متأخر: ":"القادم: ")+n.g.l+" · "+fmtD(n.due);
+ if("Notification" in window&&Notification.permission==="granted"&&n.days<=7){const k=today.toDateString();if(localStorage.getItem("kalora_notified")!==k){localStorage.setItem("kalora_notified",k);try{new Notification("KALORA 💉",{body:"تطعيمات "+n.g.l+" لـ "+who+(n.days<0?" متأخرة":" قريبة")})}catch(e){}}}
+}
+function enableNotif(){if(!("Notification" in window)){alert("هذا المتصفح لا يدعم التنبيهات. استخدمي التقويم.");return}Notification.requestPermission().then(p=>{alert(p==="granted"?"تم تفعيل التنبيهات.":"لم يتم السماح بالتنبيهات.");renderSchedule()})}
+function addToCalendar(m){
+ if(!child.dob){alert("أدخلي تاريخ الميلاد أولاً.");return}
+ const g=SCHED.find(x=>x.m===m),due=addM(dobDate(),m),end=new Date(due.getFullYear(),due.getMonth(),due.getDate()+1),p=n=>String(n).padStart(2,"0"),ymd=d=>d.getFullYear()+p(d.getMonth()+1)+p(d.getDate()),t="موعد تطعيم "+(child.name||"الطفل")+" - "+g.l;
+ const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//KALORA//AR","BEGIN:VEVENT","UID:kalora-"+m+"-"+child.dob+"@kalora","DTSTAMP:"+new Date().toISOString().replace(/[-:]|\.\d{3}/g,""),"DTSTART;VALUE=DATE:"+ymd(due),"DTEND;VALUE=DATE:"+ymd(end),"SUMMARY:"+t,"DESCRIPTION:"+g.v.map(v=>VAX[v].n).join(" / ").replace(/[,;]/g," "),"BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:"+t,"END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+ const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar;charset=utf-8"}));a.download="kalora-vaccine-"+m+"m.ics";a.click();URL.revokeObjectURL(a.href)}
+renderTopics();renderDoses();renderArticles();setLanguage("ar");
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body>
+</html>
