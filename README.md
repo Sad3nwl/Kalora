@@ -2,6 +2,9 @@
 
 A simple Arabic-first web app that helps parents keep track of their children's vaccination schedule and understand why it matters.
 
+🔗 **Live app:** [https://kalora0.netlify.app](https://kalora0.netlify.app)
+
+*(Arabic version: [README.ar.md](README.ar.md))*
 
 ## Problem
 Some parents find it hard to keep track of their children's vaccination appointments.
@@ -36,7 +39,11 @@ An app containing the vaccination schedule, reminders, and awareness information
 
 ## Run locally
 Open `index.html` or `kalora.html` in any browser. No installation or internet connection is needed.
- 
+
+## Deploy (open it as a website)
+1. **Netlify Drop:** go to `app.netlify.com/drop` and drag the folder containing these files onto the page.
+2. **GitHub Pages:** upload the files to a repository, then Settings → Pages → select the `main` branch.
+
 ## Important notes
 - **Medical content:** the schedule is general and indicative. It is not an exact copy of the Jordanian Ministry of Health schedule and must be checked against the official one before use. Edit vaccines and ages in the `SCHED` and `VAX` arrays inside `kalora.html`.
 - **This app does not replace the official vaccination card or a doctor's advice.**
@@ -49,5 +56,3 @@ Open `index.html` or `kalora.html` in any browser. No installation or internet c
 - Real push notifications that work when the app is closed.
 - `manifest.webmanifest` and `sw.js` so the app can be installed on the home screen.
 - Match the schedule to the official Ministry of Health schedule and support multiple children.
-  ## you can open in there :
-kalora0.netlify.app
