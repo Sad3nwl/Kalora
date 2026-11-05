@@ -49,3 +49,5 @@ Open `index.html` or `kalora.html` in any browser. No installation or internet c
 - Real push notifications that work when the app is closed.
 - `manifest.webmanifest` and `sw.js` so the app can be installed on the home screen.
 - Match the schedule to the official Ministry of Health schedule and support multiple children.
+  ## you can open in there :
+kalora0.netlify.app
